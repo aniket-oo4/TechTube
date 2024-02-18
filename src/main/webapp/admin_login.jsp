@@ -29,21 +29,22 @@
 				<div class="signin-content">
 					<div class="signin-image">
 						<figure>
-							<img src="images/signin-image.jpg" alt="sing up image">
+							<img src="images/signin_image2.jpg" alt="sing up image">
 						</figure>
-						<a href="registration.jsp" class="signup-image-link">Create an
-							account</a>
+						
 					</div>
 
 					<div class="signin-form">
-						<h2 class="form-title">Sign In</h2>
-						<form method="post" action="LoginServlet" class="register-form"
+						<h2 class="form-title">Admin &nbsp;|&nbsp; Login</h2>
+						<form method="post" action="AdminLoginServlet" class="register-form"
 							id="login-form">
 							<div class="form-group">
-								<label for="username"><i
-									class="zmdi zmdi-email"></i></label> <input
+								<label for="username"><i class="zmdi zmdi-account material-icons-name"
+									></i></label>
+									<!-- class="zmdi zmdi-email" -->
+									 <input
 									type="text" name="username" id="username"
-									placeholder="Your Email" />
+									placeholder="admin " />
 							</div>
 							<div class="form-group">
 								<label for="password"><i class="zmdi zmdi-lock"></i></label> <input
@@ -62,11 +63,11 @@
 							</div>
 						</form>
 						<div class="social-login">
-							<span class="social-label">Or login with</span>
+							<span class="social-label">Or login as</span>
 							<ul class="socials">
 								
-								<li><a href="login.jsp" style="font-size: 20px; border-radius: 10px;border: solid 2px;background-color: rgba(223, 139, 43, 0.854); padding: 3px;color: antiquewhite;"><i
-										class=""></i>username</a></li>
+								<li ><a href="login.jsp" style="font-size: 15px; border-radius: 10px;border: solid 2px;background-color: rgba(223, 139, 43, 0.854); padding: 3px;color: antiquewhite;"><i
+										class="admin_btn"></i>User</a></li>
 							</ul>
 						</div>
 					</div> 

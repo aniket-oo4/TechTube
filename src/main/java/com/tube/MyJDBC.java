@@ -18,7 +18,7 @@ public class MyJDBC  extends HttpServlet {
             // check username is valid or not by calling check user function
             if(!checkUser(username)){
                 Connection connection=DriverManager.getConnection(DB_url , DB_username,DB_password);
-                PreparedStatement statementQuery=connection.prepareStatement(" INSERT INTO users(user_name,email_id,password,contact_no)"+"VALUES(?,?,?,?)");
+                PreparedStatement statementQuery=connection.prepareStatement(" INSERT INTO users(user_name,email_id,password,contact_no,registration_date_time)"+"VALUES(?,?,?,?,NOW())");
 
                 // setting values to parameters ? ?
                 statementQuery.setString(1,username);
@@ -107,5 +107,36 @@ public class MyJDBC  extends HttpServlet {
 
     }
 
+// admin login vlaidation
 
+    public static boolean validateAdminLogin(String username,String password){
+try{
+
+    Connection connection=DriverManager.getConnection(DB_url,DB_username,DB_password);
+    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM admin WHERE admin_name=? AND password=?");  // query which will be going to execute
+    // placing values(user details ) in the place of ?
+    // parameter idex notihng but the index of ? mark in the satement query  first index refers to username and second index refers to pass word
+    statementQuery.setString(1,username);
+    statementQuery.setString(2,password);
+
+    // storing result of the Query  in Resultset object
+    ResultSet resultSet=statementQuery.executeQuery(); // rwturns the result of query all info about user in row format
+    //  next() function return true / false
+    //  true - if result set returned  information about user  then it points to the first row
+    // false - if query returned no data then result set points to null
+
+    if(resultSet.next())
+    {
+        return true;
+    }
+
+
+
+}catch (Exception e){
+    System.out.println(e);
+}
+
+
+        return false;
+    }
 }

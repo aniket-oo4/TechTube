@@ -1,3 +1,8 @@
+/*     main home zz */
+
+
+
+
 :root {
   font-size: 16px;
   font-family: 'Open Sans';
@@ -28,13 +33,15 @@ body::-webkit-scrollbar-thumb {
 }
 @media screen and (min-width: 990px) {
   main {
-    margin-left: 14rem;
+    /* margin-left: 14rem; */
     padding: 1rem;
     
   }
 }
 main {
-  margin-left: 20rem;
+  /* margin-left: 2rem; */
+  margin-left: 3rem;
+  /* margin-left: 20rem;   */
   padding: 1rem;
   
 }
@@ -159,7 +166,7 @@ main {
   }
 
   main {
-    margin: 0;
+    margin-left: -8rem;
   }
   
   video{
@@ -176,7 +183,7 @@ main {
   }
 
   .navbar1:hover {
-    width: 16rem;
+    width: 14rem;
   }
 
   .navbar1:hover .link-text {
@@ -201,26 +208,31 @@ main {
   --text-secondary: #ffe482;
   /* --bg-primary: #23232e;
    */
-   --bg-primary: #272730;
-  --bg-secondary: #272730;
+   --bg-primary: #23232e;
+   /* --bg-primary: #272732e; */
+  --bg-secondary: #272732e;
+  #video-title.ytd-rich-grid-media{
+    color: #e4dfdf;
+  }
 }
 .dark{
   color:#b6b6b6;
   background-color: #23232e;
 }
 .light {
-  --text-primary: #101010;
-  --text-secondary: #d8d8d8;
- /* --bg-primary: #23232e;*/
-  --bg-primary: #ffffff;
+  --text-primary:  #ffffff;
+  --text-secondary: #ffe482;
+/* --bg-primary: #23232e; */
+  /*--bg-primary: #ffffff;*/
+  --bg-primary: #0a0a0a;
   /* --bg-secondary: #777575b1; */
       --bg-secondary: #23232e;
 }
 
 .solar {
-  --text-primary: #2d2f30;
-  --text-secondary: #cadce1;
-  --bg-primary: #fdf6e3;
+  --text-primary: #b7bcbe;
+  --text-secondary:#ffe482;
+  --bg-primary: #09091b;
   --bg-secondary: #23232e;
 }
 .solar  {
@@ -250,3 +262,18 @@ main {
   justify-content: space-between;
 
 }
+
+
+
+
+/*   video playher  */ 
+
+
+video {
+            margin-top: 4.5rem;
+            margin-left: 10rem;
+            border: 1px solid rgba(0, 0, 0, 0);
+            border-radius: 20px;
+            padding-top: auto;
+          }
+   

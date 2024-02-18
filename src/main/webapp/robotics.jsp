@@ -538,8 +538,8 @@
                   <% 
                   try{ 
                     Connection connection=DriverManager.getConnection(DB_url,DB_username,DB_password);
-                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video"); 
-                 
+                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video WHERE  video_category=? "); 
+                    statementQuery.setString(1,"others");
                      ResultSet resultSet=statementQuery.executeQuery();
                       int video_id;
                     String video_file;
@@ -563,12 +563,10 @@
                 
                     cnt+=1;
                      %>
-                    
+
                     <ytd-rich-item-renderer class="style-scope ytd-rich-grid-row"
-                      items-per-row="3" id="video_id" value="<% out.print(video_id);%>"><!--css-build:shady--><!--css-build:shady-->
-                      <input type="hidden" id="video_id" value=" <%out.print(video_id); %>">
+                      items-per-row="3"><!--css-build:shady--><!--css-build:shady-->
                       <div id="content" class="style-scope ytd-rich-item-renderer">
-                        
                         <ytd-rich-grid-media class="style-scope ytd-rich-item-renderer"
                           lockup="true"><!--css-build:shady--><!--css-build:shady-->
                           <div id="dismissible" class="style-scope ytd-rich-grid-media">
@@ -577,7 +575,7 @@
                                 class="style-scope ytd-rich-grid-media" size="large" loaded="">
                                 <!--css-build:shady--><!--css-build:shady-->
                                 <a id="thumbnail" class="yt-simple-endpoint inline-block style-scope ytd-thumbnail"
-                                  aria-hidden="true" tabindex="-1" rel="null" href="PlayVideoServlet">
+                                  aria-hidden="true" tabindex="-1" rel="null" href="/watch?v=ya-pUARZjxo">
 
                                   <yt-image alt="" ftl-eligible="" notify-on-loaded="" notify-on-unloaded=""
                                     class="style-scope ytd-thumbnail">
@@ -864,10 +862,3 @@
 
 
         <!--   *****************************************************************************-->
-
-
-
-
-
-
-

@@ -29,14 +29,14 @@
 				<div class="signin-content">
 					<div class="signin-image">
 						<figure>
-							<img src="images/signin-image.jpg" alt="sing up image">
+							<img src="images/signin_image2.jpg" alt="sing up image">
 						</figure>
 						<a href="registration.jsp" class="signup-image-link">Create an
 							account</a>
 					</div>
 
 					<div class="signin-form">
-						<h2 class="form-title">Sign In</h2>
+						<h2 class="form-title">User&nbsp;|&nbsp; Login</h2>
 						<form method="post" action="LoginServlet" class="register-form"
 							id="login-form">
 							<div class="form-group">
@@ -62,14 +62,16 @@
 							</div>
 						</form>
 						<div class="social-login">
-							<span class="social-label">Or login with</span>
+							<span class="social-label">Or login as</span>
 							<ul class="socials">
 								<!-- <li><a href="#"><i
 										class="display-flex-center zmdi zmdi-facebook"></i></a></li>
 								<li><a href="#"><i
 										class="display-flex-center zmdi zmdi-twitter"></i></a></li> -->
-								<li><a href="loginG.jsp"><i
-										class="display-flex-center zmdi zmdi-google"></i></a></li>
+								<li><a href="admin_login.jsp" style="font-size: 15px; border-radius: 10px;border: solid 2px;background-color: rgba(223, 139, 43, 0.854); padding: 3px;color: antiquewhite;"><i
+									class="admin_btn"></i>admin</a></li>
+								<!-- <li><a href="loginG.jsp"><i
+										class="display-flex-center zmdi zmdi-google"></i></a></li> -->
 							</ul>
 						</div>
 					</div>

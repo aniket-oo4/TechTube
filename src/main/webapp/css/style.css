@@ -590,3 +590,9 @@ label.valid {
     margin-bottom: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.admin_btn:hover{
+background-color: #1da0f2;
+
+}
