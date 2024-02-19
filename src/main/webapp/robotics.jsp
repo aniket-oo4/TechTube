@@ -44,6 +44,12 @@
               scrollbar-width: 1px;
               scrollbar-width: none;
             }
+            ytd-video-meta-block.grid #channel-name.ytd-video-meta-block, .ytd-video-meta-block[meta-block].grid #channel-name.ytd-video-meta-block{
+             /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+             /* --yt-endpoint-hover-color: #dcda6f; */
+             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
           </style>
         </head>
 
@@ -66,53 +72,52 @@
               <!--=============== NAV MENU ===============-->
               <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                  <li><a href="#" class="nav__link">Home</a></li>
+                 
 
-                  <li><a href="#" class="nav__link">Company</a></li>
+                  <!-- <li><a href="#" class="nav__link">Company</a></li> -->
 
                   <!--=============== DROPDOWN 1 ===============-->
-                  <li class="dropdown__item">
+                  <!-- <li class="dropdown__item">
                     <div class="nav__link">
                       Analytics <i class="ri-arrow-down-s-line "></i>
                     </div>
 
 
-                  </li>
+                  </li> -->
 
-                  <li><a href="#" class="nav__link">Products</a></li>
+                  <!-- <li><a href="#" class="nav__link">Products</a></li> -->
 
                   <!--=============== DROPDOWN 2 ===============-->
                   <li class="dropdown__item">
                     <div class="nav__link">
-                      Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                      User<i class="ri-arrow-down-s-line dropdown__arrow"></i>
                     </div>
 
                     <ul class="dropdown__menu">
                       <li>
                         <a href="#" class="dropdown__link">
-                          <i class="ri-user-line"></i> Profiles
+                          <i class="ri-user-line"></i> Profile
                         </a>
                       </li>
 
-                      <li>
+                      <!-- <li>
                         <a href="#" class="dropdown__link">
-                          <i class="ri-lock-line"></i> Accounts
+                          <i class="ri-lock-line"></i> Account
                         </a>
-                      </li>
+                      </li> -->
 
-                      <li>
+                      <!-- <li>
                         <a href="#" class="dropdown__link">
                           <i class="ri-message-3-line"></i> Messages
                         </a>
-                      </li>
+                      </li> -->
                     </ul>
                   </li>
-
                   <li><a href="#" class="nav__link">Contact</a></li>
+                  <li><a href="index.jsp" class="nav__link">Home</a></li>
                 </ul>
               </div>
             </nav>
-
             <nav class="navbar1">
               <ul class="navbar1-nav">
                 <li class="logo">
@@ -457,18 +462,7 @@
           </background>
           <main>
 
-
-
-
-
-
             <div id="contents" class="style-scope ytd-rich-grid-renderer">
-
-
-
-
-
-
 
 
               <ytd-rich-grid-row class="style-scope ytd-rich-grid-renderer"><!--css-build:shady--><!--css-build:shady-->
@@ -538,8 +532,8 @@
                   <% 
                   try{ 
                     Connection connection=DriverManager.getConnection(DB_url,DB_username,DB_password);
-                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video WHERE  video_category=? "); 
-                    statementQuery.setString(1,"others");
+                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video WHERE video_category=?"); 
+                    statementQuery.setString(1,"robotics");
                      ResultSet resultSet=statementQuery.executeQuery();
                       int video_id;
                     String video_file;
@@ -563,10 +557,12 @@
                 
                     cnt+=1;
                      %>
-
+                    
                     <ytd-rich-item-renderer class="style-scope ytd-rich-grid-row"
-                      items-per-row="3"><!--css-build:shady--><!--css-build:shady-->
+                      items-per-row="3" ><!--css-build:shady--><!--css-build:shady-->
+                      
                       <div id="content" class="style-scope ytd-rich-item-renderer">
+                        
                         <ytd-rich-grid-media class="style-scope ytd-rich-item-renderer"
                           lockup="true"><!--css-build:shady--><!--css-build:shady-->
                           <div id="dismissible" class="style-scope ytd-rich-grid-media">
@@ -574,8 +570,9 @@
                               <ytd-thumbnail rich-grid-thumbnail="" use-hovered-property="" width="9999"
                                 class="style-scope ytd-rich-grid-media" size="large" loaded="">
                                 <!--css-build:shady--><!--css-build:shady-->
+                                <input type="hidden" name="video_id" id="video_id" value="<%out.print(video_id);%>">
                                 <a id="thumbnail" class="yt-simple-endpoint inline-block style-scope ytd-thumbnail"
-                                  aria-hidden="true" tabindex="-1" rel="null" href="/watch?v=ya-pUARZjxo">
+                                  aria-hidden="true" tabindex="-1" rel="null"  href="PlayVideoServlet?video_id=<%out.print(video_id);%>" >
 
                                   <yt-image alt="" ftl-eligible="" notify-on-loaded="" notify-on-unloaded=""
                                     class="style-scope ytd-thumbnail">
@@ -641,98 +638,90 @@
 
                                   </div>
 
-                                  <yt-formatted-string id="length" class="style-scope ytd-playlist-thumbnail"
-                                    aria-label="1 hour, 8 minutes, 47 seconds">1:08:47
-                                  </yt-formatted-string>
-                                  <div id="overlays" class="style-scope ytd-playlist-thumbnail">
-                                    <ytd-thumbnail-overlay-time-status-renderer
-                                      class="style-scope ytd-playlist-thumbnail"
-                                      overlay-style="DEFAULT"><!--css-build:shady--><!--css-build:shady--><ytd-badge-supported-renderer
-                                        is-thumbnail-badge=""
-                                        class="style-scope ytd-thumbnail-overlay-time-status-renderer"
-                                        system-icons=""><!--css-build:shady--><!--css-build:shady--><dom-repeat
-                                          id="repeat" as="badge"
-                                          class="style-scope ytd-badge-supported-renderer"><template
-                                            is="dom-repeat"></template></dom-repeat></ytd-badge-supported-renderer>
-                                      <div id="time-status"
-                                        class="style-scope ytd-thumbnail-overlay-time-status-renderer">
-                                        <yt-icon size="16"
-                                          class="style-scope ytd-thumbnail-overlay-time-status-renderer"
-                                          disable-upgrade="" hidden=""></yt-icon>
-                                        <span id="text" class="style-scope ytd-thumbnail-overlay-time-status-renderer"
-                                          aria-label="1 hour, 8 minutes, 47 seconds">
-                                          1:08:47
-                                        </span>
-                                      </div>
-                                    </ytd-thumbnail-overlay-time-status-renderer><ytd-thumbnail-overlay-now-playing-renderer
-                                      class="style-scope ytd-playlist-thumbnail"><!--css-build:shady--><!--css-build:shady-->
-                                      <span id="overlay-text"
-                                        class="style-scope ytd-thumbnail-overlay-now-playing-renderer">Now
-                                        playing</span>
-                                      <ytd-thumbnail-overlay-equalizer
-                                        class="style-scope ytd-thumbnail-overlay-now-playing-renderer"><!--css-build:shady--><!--css-build:shady--><svg
-                                          xmlns="http://www.w3.org/2000/svg" id="equalizer" viewBox="0 0 55 95"
-                                          class="style-scope ytd-thumbnail-overlay-equalizer">
-                                          <g class="style-scope ytd-thumbnail-overlay-equalizer">
-                                            <rect class="bar style-scope ytd-thumbnail-overlay-equalizer" x="0"></rect>
-                                            <rect class="bar style-scope ytd-thumbnail-overlay-equalizer" x="20"></rect>
-                                            <rect class="bar style-scope ytd-thumbnail-overlay-equalizer" x="40"></rect>
-                                          </g>
-                                        </svg>
-                                      </ytd-thumbnail-overlay-equalizer>
-                                    </ytd-thumbnail-overlay-now-playing-renderer>
-                                  </div>
-                                  <div id="hover-overlays" class="style-scope ytd-playlist-thumbnail"></div>
+                                  
+                                  
+                                 
                                 </a>
                               </ytd-playlist-thumbnail>
                             </div>
                             <div id="thumbnail-underlay" class="style-scope ytd-rich-grid-media" hidden=""></div>
-                            <div id="details" class="style-scope ytd-rich-grid-media"><a id="avatar-link"
+                            <div id="details" class="style-scope ytd-rich-grid-media">
+                            
+                              <!-- <a id="avatar-link"
                                 class="yt-simple-endpoint style-scope ytd-rich-grid-media" tabindex="-1"
                                 title="Coding Wallah Sir" href="/@CodingWallahSir">
                                 <yt-img-shadow id="avatar" width="48"
                                   class="style-scope ytd-rich-grid-media no-transition"
                                   style="background-color: transparent;"
-                                  loaded=""><!--css-build:shady--><!--css-build:shady--><img id="img" draggable="false"
+                                  loaded="">
+                                  <img id="img" draggable="false"
                                     class="style-scope yt-img-shadow" alt="" width="48"
-                                    src="<% out.print(channel_logo);%>"></yt-img-shadow></a>
+                                    src="<% out.print(channel_logo);%>">
+                                </yt-img-shadow>
+                              </a> -->
                                     <div id="meta" class="style-scope ytd-rich-grid-media">
-                                      <h3 class="style-scope ytd-rich-grid-media"><ytd-badge-supported-renderer class="top-badge style-scope ytd-rich-grid-media" collection-truncate="" disable-upgrade="" hidden=""></ytd-badge-supported-renderer>
-                                          <a id="video-title-link" class="yt-simple-endpoint focus-on-expand style-scope ytd-rich-grid-media" aria-label="<% out.print(video_title); %>" href="/watch?v=ya-pUARZjxo">
-                                          <yt-formatted-string id="video-title" class="style-scope ytd-rich-grid-media" aria-label="<% out.print(video_title); %> ">
+                                      <h3 class="style-scope ytd-rich-grid-media">
+                                        <ytd-badge-supported-renderer class="top-badge style-scope ytd-rich-grid-media" collection-truncate="" disable-upgrade="" hidden="">
+
+                                        </ytd-badge-supported-renderer>
+                                          <a id="video-title-link" class="yt-simple-endpoint focus-on-expand style-scope ytd-rich-grid-media" aria-label="<% out.print(video_title); %>" title="<% out.print(video_title); %>"href="#">
+                                          <yt-formatted-string id="video-title" class="style-scope ytd-rich-grid-media" aria-label="<% out.print(video_title); %>">
                                             <% out.print(video_title); %>
-                                          </yt-formatted-string></a></h3><ytd-video-meta-block class="grid style-scope ytd-rich-grid-media byline-separated" rich-meta="" amsterdam-post-mvp=""><!--css-build:shady--><!--css-build:shady-->
+                                          </yt-formatted-string></a>
+                                        </h3>
+                                          <ytd-video-meta-block class="grid style-scope ytd-rich-grid-media byline-separated" rich-meta="" amsterdam-post-mvp=""><!--css-build:shady--><!--css-build:shady-->
                                         <div id="metadata" class="style-scope ytd-video-meta-block">
                                           <div id="byline-container" class="style-scope ytd-video-meta-block">
+
+                            
+                                            
                                             <ytd-channel-name id="channel-name" class=" style-scope ytd-video-meta-block style-scope ytd-video-meta-block"><!--css-build:shady--><!--css-build:shady-->
                                               <div id="container" class="style-scope ytd-channel-name">
                                                 <div id="text-container" class="style-scope ytd-channel-name">
-                                                  <yt-formatted-string id="text" link-inherit-color="" title="<% out.print(channel_name); %> " class="style-scope ytd-channel-name complex-string" ellipsis-truncate="" ellipsis-truncate-styling="" has-link-only_=""><a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="#" dir="auto"><% out.print(channel_name);  %></a></yt-formatted-string>
+                                                  <yt-formatted-string id="text" link-inherit-color="" title="<% out.print(channel_name); %> " class="style-scope ytd-channel-name complex-string" ellipsis-truncate="" ellipsis-truncate-styling="" has-link-only_="">
+                                                    <yt-img-shadow id="avatar" width="48"
+                                                    class="style-scope ytd-rich-grid-media no-transition"
+                                                    style="background-color: transparent;"
+                                                    loaded=""><!--css-build:shady--><!--css-build:shady--><img id="img" draggable="false"
+                                                      class="style-scope yt-img-shadow" alt="" width="48"
+                                                      src="<% out.print(channel_logo);%>">
+                                                  </yt-img-shadow>
+                                                    <a class="yt-simple-endpoint style-scope " spellcheck="false" href="#" dir="auto" style="font-size: smaller;">&nbsp;&nbsp;<% out.print(channel_name);%>
+                                                    </a>
+                                                  </yt-formatted-string>
                                                 </div>
-                                                <tp-yt-paper-tooltip fit-to-visible-bounds="" class="style-scope ytd-channel-name" role="tooltip" tabindex="-1"><!--css-build:shady-->
+                                                <!-- <tp-yt-paper-tooltip fit-to-visible-bounds="" class="style-scope ytd-channel-name" role="tooltip" tabindex="-1">
                                                   <div id="tooltip" class="hidden style-scope tp-yt-paper-tooltip" style-target="tooltip">
                 
                                                     <% out.print(channel_name); %>
+                                                    <% out.print(video_id); %>
                 
                                                   </div>
-                                                </tp-yt-paper-tooltip>
+                                                </tp-yt-paper-tooltip> -->
                                               </div>
-                                              <ytd-badge-supported-renderer class="style-scope ytd-channel-name" system-icons="" disable-upgrade="" hidden=""><!--css-build:shady--><!--css-build:shady--><dom-repeat id="repeat" as="badge" class="style-scope ytd-badge-supported-renderer"><template is="dom-repeat"></template></dom-repeat></ytd-badge-supported-renderer>
+                                              <ytd-badge-supported-renderer class="style-scope ytd-channel-name" system-icons="" disable-upgrade="" hidden=""><!--css-build:shady--><!--css-build:shady-->
+                                                <dom-repeat id="repeat" as="badge" class="style-scope ytd-badge-supported-renderer">
+                                                  <template is="dom-repeat"></template>
+                                                </dom-repeat>
+                                              </ytd-badge-supported-renderer>
                                             </ytd-channel-name>
-                                            <div id="separator" class="style-scope ytd-video-meta-block">•</div>
-                                            <yt-formatted-string id="video-info" class="style-scope ytd-video-meta-block" is-empty="" hidden=""><!--css-build:shady--><!--css-build:shady--><yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
+
+                                            
+                                            <yt-formatted-string id="video-info" class="style-scope ytd-video-meta-block" is-empty="" hidden=""><yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
                                           </div>
                                           <div id="metadata-line" class="style-scope ytd-video-meta-block">
                 
-                                            <ytd-badge-supported-renderer class="inline-metadata-badge style-scope ytd-video-meta-block" hidden="" system-icons=""><!--css-build:shady--><!--css-build:shady--><dom-repeat id="repeat" as="badge" class="style-scope ytd-badge-supported-renderer"><template is="dom-repeat"></template></dom-repeat></ytd-badge-supported-renderer>
+                                            <ytd-badge-supported-renderer class="inline-metadata-badge style-scope ytd-video-meta-block" hidden="" system-icons="">
+                                              <dom-repeat id="repeat" as="badge" class="style-scope ytd-badge-supported-renderer"><template is="dom-repeat"></template></dom-repeat></ytd-badge-supported-renderer>
                                             <div id="separator" class="style-scope ytd-video-meta-block" hidden="">•</div>
                 
                                             <!-- <span class="inline-metadata-item style-scope ytd-video-meta-block">10K views</span> -->
                 
-                                            <span class="inline-metadata-item style-scope ytd-video-meta-block" style="font-size:medium">updated  <%=resultSet.getDate("upload_date_time") %></span>
+                                            <span class="inline-metadata-item style-scope ytd-video-meta-block" style="font-size:medium;" >updated  <%=resultSet.getDate("upload_date_time") %></span>
                                             <dom-repeat strip-whitespace="" class="style-scope ytd-video-meta-block"><template is="dom-repeat"></template></dom-repeat>
                                           </div>
                                         </div>
+
                                         <div id="additional-metadata-line" class="style-scope ytd-video-meta-block">
                                           <dom-repeat class="style-scope ytd-video-meta-block"><template is="dom-repeat"></template></dom-repeat>
                                         </div>
@@ -862,3 +851,10 @@
 
 
         <!--   *****************************************************************************-->
+
+
+
+
+
+
+
