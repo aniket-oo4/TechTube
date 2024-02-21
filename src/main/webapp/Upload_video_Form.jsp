@@ -94,6 +94,15 @@
   border-radius: 10px;
   color: azure;
 		}
+    textarea{
+      margin-top: 2rem;
+         background-color: transparent  ;
+			box-sizing: border-box;
+  border: 1px solid #555555ba;
+  border-radius: 10px;
+  color: azure;
+  width: 38rem;
+		}
 		select{
 			width: 200px;
 			height: 30px;
@@ -145,7 +154,7 @@ img{
               </li>
 
               <li class="nav-item">
-                <a href="manage_users.jsp" class="nav-link">
+                <a href="ManageUsers.jsp" class="nav-link">
 
                   <svg width="171px" height="171px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -408,7 +417,8 @@ img{
                                             description
                                         </label><br><br><br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="text" name="video_description" id="video_description" placeholder="description of video" required/>
+                                        <!-- <input type="textarea" name="video_description" id="video_description" placeholder="description of video" required/> -->
+                                        <textarea  name="video_description" id="video_description" placeholder="description of video" required ></textarea>
                                     </div>
                                                                             
                                 

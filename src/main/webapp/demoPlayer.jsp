@@ -106,7 +106,7 @@
 
                   <ul class="dropdown__menu">
                     <li>
-                      <a href="#" class="dropdown__link">
+                      <a href="user_profile.jsp" class="dropdown__link">
                         <i class="ri-user-line"></i> Profile
                       </a>
                     </li>
@@ -126,6 +126,7 @@
                 </li>
                 <li><a href="#" class="nav__link">Contact</a></li>
                 <li><a href="index.jsp" class="nav__link">Home</a></li>
+                <li><a href="Logout" class="nav__link">Logout</a></li>
               </ul>
             </div>
           </nav>

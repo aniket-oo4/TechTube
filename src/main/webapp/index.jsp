@@ -95,7 +95,7 @@
 
                     <ul class="dropdown__menu">
                       <li>
-                        <a href="#" class="dropdown__link">
+                        <a href="user_profile.jsp" class="dropdown__link">
                           <i class="ri-user-line"></i> Profile
                         </a>
                       </li>
@@ -115,6 +115,7 @@
                   </li>
                   <li><a href="#" class="nav__link">Contact</a></li>
                   <li><a href="index.jsp" class="nav__link">Home</a></li>
+                  <li><a href="Logout" class="nav__link">Logout</a></li>
                 </ul>
               </div>
             </nav>
@@ -206,7 +207,7 @@
                         <path fill="currentColor" d="M160,320h64V224H160Zm192-96v96h64V224Z" class="fa-primary"></path>
                       </g>
                     </svg>
-                    <span class="link-text">Robotics</span>
+                    <span class="link-text">Robotics[AI]</span>
                   </a>
                 </li>
 
@@ -440,7 +441,7 @@
           <background>
             <!--     ***************************************************************** -->
             <div class="side_logo" style="margin-left: 88rem;margin-top: 10rem;position: fixed;">
-              <img src="media/side_Logo2.png" alt="">
+              <img src="media/background/TECH1.png" alt="" style="margin-left: -5rem;">
               <div class="background_text" style="margin-left: 17px;  width:280px;padding: 20px; padding-top:3px ; ">
                 <span style="font-size: 30px;font-weight: 500;">Our mission is to give</span> everyone a voice
                 &nbsp;&nbsp;&nbsp;&nbsp;and show them the world. &nbsp;&nbsp;&nbsp;&nbsp;We believe that everyone
