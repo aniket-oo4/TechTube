@@ -32,16 +32,7 @@
           <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
           <style>
 
-.gradient-custom-2 {
-/* fallback for old browsers */
-background: #fbc2eb;
 
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
-
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
-}
 
             .navbar1:hover .logo svg {
               margin-left: 1.70rem;
