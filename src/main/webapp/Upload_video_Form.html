@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Registration</title>
+	<!-- Favicon-->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+	<link rel="manifest" href="assets/site.webmanifest" />
+
+	<!-- Font Icon -->
+	<link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css" />
+
+	<!-- Main css -->
+	<link rel="stylesheet" href="css/style.css" />
+	<style>
+		.signup .signup-content{
+			background-image: url(media/background/Upload_background1.png);
+  			background-repeat: no-repeat;
+  			background-attachment: fixed;
+			background-size: cover;
+			border-radius: 20px;
+			background-position: 0%;
+			padding: 5px;
+			/* margin: 0%; */
+		}
+		label{
+			font-size: large;
+			/* font-family:Georgia, 'Times New Roman', Times, serif; */
+			align-items: center;
+
+			border-bottom: 1px solid  rgba(160, 62, 205, 0.53);
+			padding-left: 10px;
+			padding-right: 10px;
+			
+			border-radius: 10px;
+		}
+		.form-group{
+			margin-bottom: -20px;
+		}
+		figure{
+			margin-top: 10rem;
+		}
+		input[type=file]{
+			padding-left: 50px;
+			color: blue;
+			box-sizing: border-box;
+  border: 1px solid #555555be;
+  border-radius: 10px;
+		}
+		input[type=text]{
+
+			box-sizing: border-box;
+  border: 1px solid #555555ba;
+  border-radius: 10px;
+		}
+		select{
+			width: 200px;
+			height: 30px;
+			font-size: large;
+			background-color: #55555500;
+			color: rgb(47, 47, 73);
+			border-radius: 5px;
+		}
+		.form-submit{
+			margin-left: 80px;
+		}
+		.main{
+			padding: 0px;
+			padding: 0px;
+            margin-left: 3rem;
+            background-color: rgba(255, 228, 196, 0);
+		}
+	</style>
+</head>
+
+<body >
+	<input type="hidden" id="status" value=" <%= request.getAttribute(" status") %>">
+	<div class="main">
+		<!-- Sign up form -->
+		<section class="signup">
+			<div class="container">
+				<div class="signup-content">
+					<div class="signup-form">
+						
+
+						<form method="post" action="Upload_Servlet" class="register-form" id="register-form">
+							<div class="form-group">
+								<label for="video_file">
+									upload video
+								</label><br><br><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="file" name="video_file" id="video_file" />
+							</div>
+							<div class="form-group">
+								<label for="video_title"> title </label>
+								<br><br><br><input type="text" name="video_title" id="video_title" placeholder="Title Of video" />
+							</div>
+							<div class="form-group">
+								<label for="video_image">
+									thumbnail
+								</label><br><br><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="file" name="video_image" id="video_image" />
+							</div>
+							<div class="form-group">
+								<label for="video_title"> channel name</label>
+								<br><br><br><input type="text" name="channel_name" id="channel_name" placeholder="channel name" />
+							</div>
+							<div class="form-group">
+								<label for="channel_logo">
+									channel_logo
+								</label><br><br><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="file" name="channel_logo" id="channel_logo" />
+							</div>
+							<div class="form-group">
+								<label for="video_category">
+									video_category
+								</label><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
+								<select name="video_category" id="video_category">
+									<optgroup label="Trends">
+									<option value="others">others</option>
+									<option value="animals">animals</option>
+									<option value="robotics">robotics</option>
+									<option value="computers">computers</option>
+									</optgroup>	
+							
+								  </select>
+								
+							</div>
+							<div class="form-group" style="margin-bottom: 3px;">
+								<label for="video_description">
+									description
+								</label><br><br><br>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="text" name="video_description" id="video_description" placeholder="description of video"/>
+							</div>
+																	
+						
+							<!-- <div class="form-group">
+								<input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
+								<label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all
+									statements in
+									<a href="#" class="term-service">Terms of service</a></label>
+							</div> -->
+
+							<div class="form-group form-button">
+								<input type="submit" name="signup" id="signup" class="form-submit" value="Upload" />
+							</div>
+						</form>
+					</div>
+					<div class="signup-image">
+						<figure>
+							<img src="images/signup_image.jpg" alt="sing up image" />
+						</figure>
+						
+
+					
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- JS -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<!--
+<script>
+function myFunction() {
+if(document.getElementById("status").value!="success"){ alert("Details are invalid ");}
+
+  //alert(status1);
+}
+</script>
+
+-->
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

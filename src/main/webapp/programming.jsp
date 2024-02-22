@@ -56,6 +56,7 @@
         <body>
           <header>
             <%@include file="includes/top-navbar.jsp"%>
+
             <%@include file="includes/main-navbar1.jsp"%>
           </header>
           <background>
@@ -153,8 +154,8 @@
                   <% 
                   try{ 
                     Connection connection=DriverManager.getConnection(DB_url,DB_username,DB_password);
-                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video WHERE video_category=?"); 
-                    statementQuery.setString(1,"robotics");
+                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video"); 
+                 
                      ResultSet resultSet=statementQuery.executeQuery();
                       int video_id;
                     String video_file;
@@ -193,7 +194,7 @@
                                 <!--css-build:shady--><!--css-build:shady-->
                                 <input type="hidden" name="video_id" id="video_id" value="<%out.print(video_id);%>">
                                 <a id="thumbnail" class="yt-simple-endpoint inline-block style-scope ytd-thumbnail"
-                                  aria-hidden="true" tabindex="-1" rel="null"  href="PlayVideoServlet?video_id=<%out.print(video_id);%>" >
+                                  aria-hidden="true" tabindex="-1" rel="null"  href="PlayVideoServlet?video_id=<%out.print(video_id);%>">
 
                                   <yt-image alt="" ftl-eligible="" notify-on-loaded="" notify-on-unloaded=""
                                     class="style-scope ytd-thumbnail">

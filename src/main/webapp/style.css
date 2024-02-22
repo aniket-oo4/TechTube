@@ -43,6 +43,8 @@ main {
   margin-left: 3rem;
   /* margin-left: 20rem;   */
   padding: 1rem;
+ 
+
   
 }
 
@@ -200,6 +202,9 @@ main {
     left: 0px;
     margin-left: 5rem;
   }
+  .navbar1{
+    /* border-right: 1px solid rgb(198, 150, 46); */
+  }
 
 }
 
@@ -208,9 +213,10 @@ main {
   --text-secondary: #ffe482;
   /* --bg-primary: #23232e;
    */
-   --bg-primary: #23232e;
+   /* --bg-primary: #23232e; */
+   --bg-primary: #12121e;
    /* --bg-primary: #272732e; */
-  --bg-secondary: #272732e;
+  --bg-secondary: #23232e;
   #video-title.ytd-rich-grid-media{
     color: #e4dfdf;
   }
@@ -227,22 +233,34 @@ main {
 .dark{
   color:#b6b6b6;
   background-color: #23232e;
+  /* background-color: #2d2d3e; */
+  .container {
+    background-color: var(--bg-primary);
+  }
 }
 .light {
   --text-primary:  #ffffff;
   --text-secondary: #ffe482;
 /* --bg-primary: #23232e; */
   /*--bg-primary: #ffffff;*/
-  --bg-primary: #0a0a0a;
+  /* --bg-primary: #0a0a0a; */
+  --bg-primary: #12121e;
   /* --bg-secondary: #777575b1; */
       --bg-secondary: #23232e;
+
+      .container {
+        background-color: var(--bg-primary);
+      }
 }
 
 .solar {
   --text-primary: #b7bcbe;
   --text-secondary:#ffe482;
-  --bg-primary: #09091b;
+  /* --bg-primary: #09091b; */
+  --bg-primary: #12121e;
   --bg-secondary: #23232e;
+  
+
 }
 .solar  {
   background-color: #fdf6e3;;

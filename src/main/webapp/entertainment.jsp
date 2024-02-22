@@ -154,7 +154,7 @@
                   try{ 
                     Connection connection=DriverManager.getConnection(DB_url,DB_username,DB_password);
                     PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video WHERE video_category=?"); 
-                    statementQuery.setString(1,"robotics");
+                    statementQuery.setString(1,"entertainment");
                      ResultSet resultSet=statementQuery.executeQuery();
                       int video_id;
                     String video_file;

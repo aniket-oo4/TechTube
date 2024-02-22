@@ -36,3 +36,63 @@ build/
 
 ### Mac OS ###
 .DS_Store
+src/main/webapp/media/side_Logo.png
+src/main/webapp/media/side_Logo2.png
+src/main/webapp/media/background/Admin.png
+src/main/webapp/media/background/background1.png
+src/main/webapp/media/background/background2.png
+src/main/webapp/media/background/ManageContent.png
+src/main/webapp/media/background/ManageUsers.png
+src/main/webapp/media/background/TECH1.png
+src/main/webapp/media/background/TECHLOGO.png
+src/main/webapp/media/background/Upload_background1.png
+src/main/webapp/media/background/Upload_background2.png
+src/main/webapp/media/background/UploadVIdeos.png
+src/main/webapp/media/content/channelLogo/Anuv Jain.jpg
+src/main/webapp/media/content/channelLogo/cabin.png
+src/main/webapp/media/content/channelLogo/cake.png
+src/main/webapp/media/content/channelLogo/circus.png
+src/main/webapp/media/content/channelLogo/Cric Loot HD.jpg
+src/main/webapp/media/content/channelLogo/Everest Marathi.jpg
+src/main/webapp/media/content/channelLogo/game.png
+src/main/webapp/media/content/channelLogo/Geo Cricket.jpg
+src/main/webapp/media/content/channelLogo/GetsetflySCIENCE.jpg
+src/main/webapp/media/content/channelLogo/LateNightLofis.jpg
+src/main/webapp/media/content/channelLogo/logo.jpeg
+src/main/webapp/media/content/channelLogo/Mystery Talks.jpg
+src/main/webapp/media/content/channelLogo/ProjectNightfall.jpg
+src/main/webapp/media/content/channelLogo/safe.png
+src/main/webapp/media/content/channelLogo/Simplilearn.jpg
+src/main/webapp/media/content/channelLogo/Sony SAB.jpg
+src/main/webapp/media/content/channelLogo/submarine.png
+src/main/webapp/media/content/thumbnails/cabin.png
+src/main/webapp/media/content/thumbnails/cake.png
+src/main/webapp/media/content/thumbnails/circus.png
+src/main/webapp/media/content/thumbnails/css1.png
+src/main/webapp/media/content/thumbnails/football.png
+src/main/webapp/media/content/thumbnails/game.png
+src/main/webapp/media/content/thumbnails/responsive.png
+src/main/webapp/media/content/thumbnails/RoboticsAi1.png
+src/main/webapp/media/content/thumbnails/RoboticsAi2.png
+src/main/webapp/media/content/thumbnails/RoboticsAi3.png
+src/main/webapp/media/content/thumbnails/safe.png
+src/main/webapp/media/content/thumbnails/Song1.png
+src/main/webapp/media/content/thumbnails/Song2.png
+src/main/webapp/media/content/thumbnails/Song3.png
+src/main/webapp/media/content/thumbnails/Sports1.png
+src/main/webapp/media/content/thumbnails/Story1.png
+src/main/webapp/media/content/thumbnails/submarine.png
+src/main/webapp/media/content/thumbnails/TMKOC1.png
+src/main/webapp/media/content/thumbnails/Upload_background1.png
+src/main/webapp/media/content/videos/Robotics1.mp4
+src/main/webapp/media/content/videos/Robotics2.mp4
+src/main/webapp/media/content/videos/Robotics3.mp4
+src/main/webapp/media/content/videos/Song1.mp4
+src/main/webapp/media/content/videos/Song2.mp4
+src/main/webapp/media/content/videos/Song3.mp4
+src/main/webapp/media/content/videos/Sports1.mp4
+src/main/webapp/media/content/videos/Story1.mp4
+src/main/webapp/media/content/videos/TMKOC1.mp4
+src/main/webapp/media/content/videos/video1.mp4
+src/main/webapp/media/content/videos/video2.mp4
+src/main/webapp/media/videos/video1.mp4
