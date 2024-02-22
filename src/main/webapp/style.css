@@ -259,11 +259,15 @@ main {
   /* --bg-primary: #09091b; */
   --bg-primary: #12121e;
   --bg-secondary: #23232e;
+  .container {
+    background-color: var(--bg-primary);
+  }
   
 
 }
 .solar  {
-  background-color: #fdf6e3;;
+  background-color: #fdf6e3;
+
 }
 
 .theme-icon {
@@ -304,3 +308,10 @@ video {
             padding-top: auto;
           }
    
+.side_logo{
+  /* margin-left: 78rem;
+  margin-top: 10rem;
+  position: fixed; */
+  margin-left: 88rem;margin-top: 10rem;position: fixed;
+          }
+       /* margin-left: 88rem;margin-top: 10rem;position: fixed; */

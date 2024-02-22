@@ -61,7 +61,7 @@
           </header>
           <background>
             <!--     ***************************************************************** -->
-            <div class="side_logo" style="margin-left: 88rem;margin-top: 10rem;position: fixed;">
+            <div class="side_logo" >
               <img src="media/background/TECH1.png" alt="" style="margin-left: -5rem;">
               <div class="background_text" style="margin-left: 17px;  width:280px;padding: 20px; padding-top:3px ; ">
                 <span style="font-size: 30px;font-weight: 500;">Our mission is to give</span> everyone a voice
