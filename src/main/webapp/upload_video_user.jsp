@@ -55,9 +55,21 @@
              /* --yt-endpoint-hover-color: #dcda6f; */
              font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
-          .dark{
-            color: black;
-          }
+            .dark{
+                color:black ;
+            }
+            .col-sm-3{
+                border-bottom:3px solid rgb(86, 3, 86) ;
+                border-radius: 10px;
+            }
+            .form-submit{
+                padding: 5px;
+            }
+            .form-submit:hover{
+             background-color: blueviolet;
+             color: #eee;
+            }
+
           </style>
         </head>
 
@@ -82,129 +94,136 @@
                %>
 
 
-<section style="background-color: #eee;margin: 10rem;">
+<section style="background-color: #eee;margin: 11rem;margin-top: 5rem;margin-bottom: 5rem;">
         <div class="container py-5">
 
       
-          <div class="row">
+          <div class="row" style="margin-left: 20rem;">
             <div class="col-lg-4">
-              <div class="card mb-4">
-                <div class="card-body text-center">
-                  <!-- <img src="media/content/channelLogo/Anuv Jain.jpg" alt="avatar"
-                    class="rounded-circle img-fluid" style="width: 150px;"> -->
-                    <img src="<%=resultSet.getString("user_profile")%>" alt="avatar"
-                    class="rounded-circle img-fluid" style="width: 150px;">
-                  <h5 class="my-3"><%out.print(user_name);%></h5>
-                  
-                  <!-- <p class="text-muted mb-1">Full Stack Developer</p> -->
-                  <p class="text-muted mb-1"><%=resultSet.getString("user_description")%></p>
-                  <p class="text-muted mb-4"><%=resultSet.getString("user_address")%></p>
-                  <div class="d-flex justify-content-center mb-2">
-                    <!-- <button type="button" class="btn btn-primary">Follow</button> -->
-                    <!-- <button type="button" class="btn btn-outline-primary ms-1">image</button>
-                    <button type="button" class="btn btn-outline-primary ms-1">bio</button>
-                    <button type="button" class="btn btn-outline-primary ms-1">address</button> -->
-
-
-                    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  update profile
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" >
-       
-        <form action="UpdateProfileServlet" method="post" class="inner-form">
-          <input type="hidden"  name="user-name" value="<%out.print(user_name);%>">
-          <label for="profile-image"> Update Image: <br>
-            <input type="file" name="profile-image"   id="profile-image" style="margin-left:90px ;" value="<%=resultSet.getString("user_profile")%>"><br>
-            ________________________________________________________<br>
-
-          </label>
-          <label for="user-bio"> Update Bio:<br> 
-           <textarea name="user-bio" id="user-bio" cols="30" rows="4" ><%=resultSet.getString("user_description")%></textarea> 
-           <!-- <input type="text" name="user-bio" style="width: 20rem;height: 10rem;"> -->
-            <br>
-            ________________________________________________________<br>
-          </label>
-          <label for="user-addres"> Update Address<br> 
-            <textarea name="user-address" id="user-address" cols="30" rows="5" ><%=resultSet.getString("user_address")%></textarea> 
-            <!-- <input type="text" name="user-bio" style="width: 20rem;height: 10rem;"> -->
-             <br>
-             ________________________________________________________<br>
-           </label>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        <input type="submit" class="btn btn-primary" value="Save Changes">
-      </form>
-      </div>
-    </div>
-  </div>
-</div>
- <!--  modal close   -->
-
-                  </div>
-                </div>
+              <div class="card mb-4" style="margin-left: 10rem; background-color: blueviolet; width: 20rem;color: #eee;font-size: large;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upload Your Video Here 
               </div>
-
+          
             </div>
-            <div class="col-lg-8" >
-              <div class="card mb-4" style="margin-top: 6rem;">
-                <div class="card-body">
+            <form method="post" action="User_Upload_Servlet" class="register-form" id="register-form">
+
+            <div class="col-lg-8" style="width: 40;" >
+              <div class="card mb-4" style="margin-top: 2rem;">
+                <div class="card-body" >
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Full Name</p>
+                      <p class="mb-0">Upload video</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><% out.print(user_name);%></p>
+                      <p class="text-muted mb-0">
+                        <input type="file" name="video_file" id="video_file" required />
+                    </p>
                     </div>
+                    ________________________________________________________
+                    <br>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Email</p>
+                      <p class="mb-0">Upload Title</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><%=resultSet.getString("email_id")%></p>
+                      <p class="text-muted mb-0">
+
+                        <input type="text" name="video_title" id="video_title" placeholder="Title Of video" required/>
+
+                      </p>
                     </div>
-                  </div>
+                    ________________________________________________________
+                    <br>
+                </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Mobile </p>
+                      <p class="mb-0">Thumbnail  </p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><%=resultSet.getString("contact_no")%></p>
+                      <p class="text-muted mb-0">
+
+                        <input type="file" name="video_image" id="video_image" />
+
+                      </p>
                     </div>
-                  </div>
+                    ________________________________________________________
+                    <br>
+                </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">channel-name</p>
+                      <p class="mb-0">channel  name</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><%=resultSet.getString("channel_name")%></p>
+                      <p class="text-muted mb-0">
+
+                        <input type="text" name="channel_name" id="channel_name" placeholder="channel name" required/>
+
+                      </p>
                     </div>
-                  </div>
+                    ________________________________________________________
+                    <br>
+                
+                </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <p class="mb-0">Address</p>
+                      <p class="mb-0">channel_logo</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0"><%=resultSet.getString("user_address")%></p>
+                      <p class="text-muted mb-0">
+
+                        <input type="file" name="channel_logo" id="channel_logo" required/>
+
+                      </p>
                     </div>
-                  </div>
+                  
+                    ________________________________________________________
+                    <br>
+                </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0"> video_category</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">
+
+                        <select name="video_category" id="video_category" style="cursor:pointer;">
+                            <optgroup label="Trends">
+                            <option value="others">others</option>
+                            <option value="entertainment">entertainment</option>
+                            <option value="robotics">robotics</option>
+                            <option value="programming">programming</option>
+                            <option value="rocket_science">rocket science</option>
+                            </optgroup>	
+                    
+                          </select>
+
+                      </p>
+                    </div>
+                    ________________________________________________________
+                    <br>
+                </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">video description</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">
+
+                        <textarea  name="video_description" id="video_description" placeholder="description of video" required ></textarea>
+
+                      </p>
+                    </div>
+                    ________________________________________________________
+                    <br>
+                </div>
+                  <hr>
                 </div>
               </div>
               <div class="row">
@@ -212,6 +231,17 @@
             
             </div>
           </div>
+
+       
+
+            <div class="form-group form-button">
+                <input type="submit" name="signup" id="signup" class="form-submit" value="Upload" />
+            </div>
+        </form>
+
+
+
+
         </div>
       </section>
    </main>

@@ -156,6 +156,7 @@ main{
           <!-- ************************************************************************* -->
         </background>
         <main> 
+          <h1 style="margin-left: 36rem; position: fixed; background-color: #1c1a1a5e; padding: 0px 10px; border-radius: 5px;"> MANAGE CONTENT HERE  </h1>
             <table cellpadding="0" cellspacing="0" border="0"  width="70%"
             class="table table-striped table-hover" >
                 <thead>
@@ -166,8 +167,8 @@ main{
                         <th>video_category </th>
                         <th>video description</th>
                         <th>Reg. Date </th>
-                        <th>Select</th>
-                        
+                        <th>Update</th>
+                        <th>Delete </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -198,7 +199,11 @@ main{
                         <td><% out.print(resultSet.getString("upload_date_time")); %></td>
                         <td>
                          
-                          <button type="button" class="btn btn-danger" name="selector" value="<%out.print(resultSet.getInt("video_id")); %>">update</button></td>
+                          <button type="button" class="btn btn-primary" name="selector" value="<%out.print(resultSet.getInt("video_id")); %>">update</button></td>
+                          <td>
+                            <a href="RemoveVideo?video_id=<%=resultSet.getInt("video_id")%>" >       
+                            <button type="button" class="btn btn-danger" name="selector" value="<%out.print(resultSet.getInt("video_id")); %>">delete</button></td>
+                            </a>
                     <%
                 cnt+=1;
                 }

@@ -153,7 +153,7 @@
                   <% 
                   try{ 
                     Connection connection=DriverManager.getConnection(DB_url,DB_username,DB_password);
-                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video"); 
+                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video Where video_category='rocket_science'"); 
                  
                      ResultSet resultSet=statementQuery.executeQuery();
                       int video_id;

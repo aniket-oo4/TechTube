@@ -150,10 +150,10 @@
 
               <ytd-rich-grid-row class="style-scope ytd-rich-grid-renderer"><!--css-build:shady--><!--css-build:shady-->
                 <div id="contents" class="style-scope ytd-rich-grid-row">
-                  <% 
+                    <% 
                   try{ 
                     Connection connection=DriverManager.getConnection(DB_url,DB_username,DB_password);
-                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video"); 
+                    PreparedStatement statementQuery=connection.prepareStatement("SELECT * FROM video Where video_category !='entertainment'"); 
                  
                      ResultSet resultSet=statementQuery.executeQuery();
                       int video_id;
@@ -196,6 +196,7 @@
                                   aria-hidden="true" tabindex="-1" rel="null"  href="PlayVideoServlet?video_id=<%out.print(video_id);%>" >
                                 
                                 </form>
+                                
                                   <yt-image alt="" ftl-eligible="" notify-on-loaded="" notify-on-unloaded=""
                                     class="style-scope ytd-thumbnail">
                                     <!-- <img alt="" style="background-color: transparent;"  class="yt-core-image yt-core-image--fill-parent-height yt-core-image--fill-parent-width yt-core-image--content-mode-scale-aspect-fill yt-core-image--loaded"

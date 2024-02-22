@@ -43,11 +43,11 @@
               </a>
             </li>
 
-            <!-- <li>
-              <a href="#" class="dropdown__link">
-                <i class="ri-lock-line"></i> Account
+            <li>
+              <a href="upload_video_user.jsp" class="dropdown__link">
+                <i class="ri-video-upload-fill"></i> Upload video
               </a>
-            </li> -->
+            </li>
 
             <!-- <li>
               <a href="#" class="dropdown__link">

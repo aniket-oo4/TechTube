@@ -12,6 +12,7 @@
         <!--  bootstrap links -->
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -119,6 +120,9 @@ th{
 main{
   width: 90rem;
 }
+thead{
+  background-color: rgb(98, 106, 113);
+}
 
         </style>
       </head>
@@ -156,16 +160,18 @@ main{
           <!-- ************************************************************************* -->
         </background>
         <main> 
+          <h1 style="margin-left: 30rem; position: fixed; background-color: #1c1a1a5e; padding: 0px 10px; border-radius: 5px;"> MANAGE USER INFORMATION HERE </h1>
             <table cellpadding="0" cellspacing="0" border="0"  width="70%"
             class="table table-striped table-hover" >
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Profile Picture</th>
                         <th> User Name</th>
                         <th>Email </th>
                         <th>Contact no</th>
                         <th>Reg. Date </th>
-                        <th>Select</th>
+                        <th>Delete</th>
                         
                     </tr>
                 </thead>
@@ -187,16 +193,54 @@ main{
     int cnt=1;
     while(resultSet.next())
     {
-    %>									
+    %>								
+    <form action="RemoveUsers" method="get">	
                     <tr>
                         <td><% out.print(cnt) ;%></td>
+                        <td><img  style="border-radius: 50px;" src="<% out.print(resultSet.getString("user_profile")) ;%>" alt="" width=100px height=100px ></td>
                         <td><% out.print(resultSet.getString("user_name")); %></td>
                         <td><% out.print(resultSet.getString("email_id")); %></td>
                         <td><% out.print(resultSet.getString("contact_no")); %></td>
                         <td><% out.print(resultSet.getString("registration_date_time")); %></td>
                         <td>
                           <!-- <input type="radio" name="selector" value=" <%out.print(resultSet.getInt("user_id")); %>"> -->
-                          <button type="button" class="btn btn-danger" name="selector" value="<%out.print(resultSet.getInt("user_id")); %>">update</button></td>
+                          <!-- <button type="button" class="btn btn-danger" name="selector" value="<%out.print(resultSet.getInt("user_id")); %>"> -->
+                            
+                            <!-- remove</button> -->
+                                    <!-- Button trigger modal -->
+                         <a href="RemoveUsers?user_name=<%=resultSet.getString("user_name")%>" >       
+                         <button   name="user-name" value=""  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" vlaue="<%out.print(resultSet.getInt("user_id")); %>">
+                        Remove 
+                       </button>
+                      </a>  
+                        </td>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete User From Database </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <h1> Are Your Sure ? </h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+          
+        <!-- <input  type="submit" class="btn btn-danger" value="Proceed"> -->
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+      
+
+
+
                     <%
                 cnt+=1;
                 }
@@ -208,7 +252,10 @@ main{
                       %>
                     
             </table>
-           
+
+
+
+     
         </main>
 
 
@@ -219,6 +266,9 @@ main{
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+      
       </body>
 
 

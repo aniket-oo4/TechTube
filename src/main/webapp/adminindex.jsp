@@ -112,7 +112,7 @@
         <main>
 <div class="title">
 
-  <img src="media/background/Admin.png" alt="" style="margin-top: 0px; position: fixed; margin-left: 30rem;">  
+  <img src="media/background/Admin.png" alt="" style="margin-top: 12rem; position: fixed; margin-left: 37rem;">  
   <!-- <div class="content-admin" style="margin-top: 10rem; position: fixed; margin-left: 17rem;">
    <a   href="ManageUsers.jsp"> 
     <img  class="ManageUsers" src="media/background/ManageUsers.png" alt="" style="">

@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
         dispatcher=request.getRequestDispatcher("login.jsp");
         // if valid
         if(user!=null){
-
+            request.setAttribute("user_name",user_name);
             request.setAttribute("status","success");
             session.setAttribute("name",user.getUser_name());// setting session name
 //            response.sendRedirect("index.jsp");
